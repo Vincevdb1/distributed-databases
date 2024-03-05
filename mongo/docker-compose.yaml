@@ -1,32 +1,48 @@
 version: "3.8"
 
 services:
-  mongo1:
+  mongo_shard1:
     image: mongo:7.0
-    container_name: mongo1
+    container_name: mongo_shard1
     ports:
-      - 30001:27017
+      - 50001:27017
+    command: mongod --shardsvr --replSet shardrs
     volumes:
-      - "mongo1_data:/data/db"
+      - "mongo_shard1_data:/data/db"
 
-  mongo2:
+  mongo_shard2:
     image: mongo:7.0
-    container_name: mongo2
+    container_name: mongo_shard2
     ports:
-      - 30002:27017
+      - 50002:27017
+    command: mongod --shardsvr --replSet shardrs
     volumes:
-      - "mongo2_data:/data/db"
+      - "mongo_shard2_data:/data/db"
 
-  mongo3:
+  mongo_shard3:
     image: mongo:7.0
-    container_name: mongo3
+    container_name: mongo_shard3
     ports:
-      - 30003:27017
+      - 50003:27017
+    command: mongod --shardsvr --replSet shardrs
     volumes:
-      - "mongo3_data:/data/db"
+      - "mongo_shard3_data:/data/db"
 
+  # ------------------------------
+
+  mongo_router:
+    image: mongo:7.0
+    container_name: mongo_router
+    ports:
+      - 60000:27017
+    command: mongos --configdb mongo_cfg:27017
+    depends_on:
+      - mongo_cfg
 
 volumes:
-  mongo1_data:
-  mongo2_data:
-  mongo3_data:
+  mongo_cfg_data:
+  mongo_cfg2_data:
+  mongo_cfg3_data:
+  mongo_shard1_data:
+  mongo_shard2_data:
+  mongo_shard3_data:

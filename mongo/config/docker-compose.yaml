@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  mongo_cfg:
+    image: mongo:7.0
+    container_name: mongo_cfg
+    ports:
+      - 40001:27017
+    command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
+    volumes:
+      - "mongo_cfg_data:/data/db"
+
+  mongo_cfg2:
+    image: mongo:7.0
+    container_name: mongo_cfg2
+    ports:
+      - 40002:27017
+    command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
+    volumes:
+      - "mongo_cfg2_data:/data/db"
+
+  mongo_cfg3:
+    image: mongo:7.0
+    container_name: mongo_cfg3
+    ports:
+      - 40003:27017
+    command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
+    volumes:
+      - "mongo_cfg3_data:/data/db"
+
+volumes:
+  mongo_cfg_data:
+  mongo_cfg2_data:
+  mongo_cfg3_data:
