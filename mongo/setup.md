@@ -129,3 +129,6 @@ If we want to use shards as a complete seperate instance then we can't add data 
 
 ## Search for a way to choose which shard to store it in (not ideal because all instances would be need to be able to access the mongo router)
 
+[^sources]: sources
+    https://www.mongodb.com/docs/v7.0/core/sharded-cluster-shards/
+    https://www.youtube.com/watch?v=Rwg26U0Zs1o
