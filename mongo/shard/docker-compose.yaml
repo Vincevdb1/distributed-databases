@@ -6,7 +6,7 @@ services:
     container_name: mongo_shard1
     ports:
       - 50001:27017
-    command: mongod --shardsvr --replSet shardrs
+    command: mongod --shardsvr --replSet shardrs --port 27017 --dbpath /data/db
     volumes:
       - "mongo_shard1_data:/data/db"
 
@@ -15,7 +15,7 @@ services:
     container_name: mongo_shard2
     ports:
       - 50002:27017
-    command: mongod --shardsvr --replSet shardrs
+    command: mongod --shardsvr --replSet shardrs --port 27017 --dbpath /data/db
     volumes:
       - "mongo_shard2_data:/data/db"
 
@@ -24,25 +24,11 @@ services:
     container_name: mongo_shard3
     ports:
       - 50003:27017
-    command: mongod --shardsvr --replSet shardrs
+    command: mongod --shardsvr --replSet shardrs --port 27017 --dbpath /data/db
     volumes:
       - "mongo_shard3_data:/data/db"
 
-  # ------------------------------
-
-  mongo_router:
-    image: mongo:7.0
-    container_name: mongo_router
-    ports:
-      - 60000:27017
-    command: mongos --configdb mongo_cfg:27017
-    depends_on:
-      - mongo_cfg
-
 volumes:
-  mongo_cfg_data:
-  mongo_cfg2_data:
-  mongo_cfg3_data:
   mongo_shard1_data:
   mongo_shard2_data:
   mongo_shard3_data:

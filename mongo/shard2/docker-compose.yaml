@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  mongo_shard4:
+    image: mongo:7.0
+    container_name: mongo_shard4
+    ports:
+      - 50004:27017
+    command: mongod --shardsvr --replSet shard2rs --port 27017 --dbpath /data/db
+    volumes:
+      - "mongo_shard1_data:/data/db"
+
+  mongo_shard5:
+    image: mongo:7.0
+    container_name: mongo_shard5
+    ports:
+      - 50005:27017
+    command: mongod --shardsvr --replSet shard2rs --port 27017 --dbpath /data/db
+    volumes:
+      - "mongo_shard2_data:/data/db"
+
+  mongo_shard6:
+    image: mongo:7.0
+    container_name: mongo_shard6
+    ports:
+      - 50006:27017
+    command: mongod --shardsvr --replSet shard2rs --port 27017 --dbpath /data/db
+    volumes:
+      - "mongo_shard3_data:/data/db"
+
+volumes:
+  mongo_shard1_data:
+  mongo_shard2_data:
+  mongo_shard3_data:

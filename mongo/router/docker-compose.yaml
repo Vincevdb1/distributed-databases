@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  mongo_router:
+    image: mongo:7.0
+    container_name: mongo_router
+    ports:
+      - 60000:27017
+    command: mongos --configdb cfgrs/host.docker.internal:40001,host.docker.internal:40002,host.docker.internal:40003 --bind_ip 0.0.0.0 --port 27017
