@@ -2,7 +2,16 @@ import Gun from 'gun'
 
 const gun = Gun()
 
-// gun.put({ hello: 'world' })
+// gun.put({
+//     id: '1',
+//     log: {
+//         date: '2020-01-01',
+//         message: 'Hello, world!',
+//         from: 'location1',
+//         to: 'location2'
+//     }
+// })
 
-gun.get('hello').on(data => console.log(data))
-
+gun.get('1').on(function (data) {
+    console.log(data)
+})
