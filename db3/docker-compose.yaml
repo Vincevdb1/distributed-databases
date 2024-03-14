@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  db3:
+    image: ghcr.io/dbpunk-labs/db3:latest
+    container_name: db3
+    ports:
+      - "26639:26639"
+      - "26629:26629"
+      - "26619:26619"
