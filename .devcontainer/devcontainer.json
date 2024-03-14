@@ -8,7 +8,9 @@
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
 		"ghcr.io/devcontainers-contrib/features/mongosh-homebrew:1": {},
 		"ghcr.io/devcontainers/features/node:1": {},
-		"ghcr.io/devcontainers-contrib/features/angular-cli:2": {}
+		"ghcr.io/devcontainers-contrib/features/angular-cli:2": {},
+		"ghcr.io/devcontainers/features/java:1": {},
+		"ghcr.io/devcontainers-contrib/features/gradle-sdkman:2": {}
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
