@@ -2,6 +2,9 @@ package com.example.cassandrajava.domain;
 
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.UUID;
+
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
@@ -10,6 +13,6 @@ import org.springframework.data.cassandra.core.mapping.Table;
 @Builder
 public class Balloon {
     @PrimaryKey
-    private Integer id;
+    private UUID id;
     private String name;
 }

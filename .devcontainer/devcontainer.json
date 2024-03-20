@@ -10,8 +10,10 @@
 		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/devcontainers-contrib/features/angular-cli:2": {},
 		"ghcr.io/devcontainers/features/java:1": {
-			"jdkDistro": "amzn",
-			"version": "8"
+			// "jdkDistro": "amzn",
+			// "version": "8"
+			"jdkDistro": "open",
+			"version": "21"
 		}
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
