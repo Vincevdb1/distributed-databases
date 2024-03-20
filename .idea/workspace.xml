@@ -9,19 +9,14 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b926b73-19ff-4826-bdd4-6443b3c7877c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cassandra-java/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/src/main/java/com/example/cassandrajava/CassandraJavaApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/src/main/java/com/example/cassandrajava/domain/Balloon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/src/main/java/com/example/cassandrajava/domain/types/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cassandra-java/src/test/java/com/example/cassandrajava/CassandraJavaApplicationTests.java" afterDir="false" />
+    <list default="true" id="6b926b73-19ff-4826-bdd4-6443b3c7877c" name="Changes" comment="feat: Add db connections to cassandra">
+      <change afterPath="$PROJECT_DIR$/cassandra-java/src/main/java/com/example/cassandrajava/controllers/BalloonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cassandra-java/src/main/java/com/example/cassandrajava/repositories/BalloonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cassandra-java/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cassandra-java/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cassandra-java/src/main/java/com/example/cassandrajava/domain/Balloon.java" beforeDir="false" afterPath="$PROJECT_DIR$/cassandra-java/src/main/java/com/example/cassandrajava/domain/Balloon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cassandra-java/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cassandra-java/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -109,7 +104,7 @@
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18039867" />
-      <window_info id="Commit" order="1" weight="0.21229236" />
+      <window_info id="Commit" order="1" weight="0.18039867" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" weight="0.3303665" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -117,7 +112,7 @@
       <window_info anchor="bottom" id="Build" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="File Transfer" />
-      <window_info anchor="bottom" id="Run" weight="0.47591624" />
+      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.3041885" />
       <window_info anchor="bottom" id="Find" show_stripe_button="false" weight="0.3303665" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.3303665" />
       <window_info anchor="bottom" id="Problems View" order="1" />
@@ -168,6 +163,19 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="cassandra-java/docker-compose.yaml.cassandra2: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="cassandra2" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="cassandra-java/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="cassandra-java/docker-compose.yaml.cassandra: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -183,6 +191,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.cassandra-java/docker-compose.yaml.cassandra2: Compose Deployment" />
         <item itemvalue="Docker.cassandra-java/docker-compose.yaml.cassandra-web: Compose Deployment" />
         <item itemvalue="Docker.cassandra-java/docker-compose.yaml.cassandra: Compose Deployment" />
       </list>
@@ -203,7 +212,17 @@
       <workItem from="1710941436212" duration="100000" />
       <workItem from="1710941559120" duration="2489000" />
       <workItem from="1710944081433" duration="206000" />
+      <workItem from="1710944780402" duration="1477000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: Add db connections to cassandra">
+      <option name="closed" value="true" />
+      <created>1710945014719</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710945014719</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +238,10 @@
     <module name="application" />
     <module name="application.main" />
     <module name="application.test" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: Add db connections to cassandra" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add db connections to cassandra" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
