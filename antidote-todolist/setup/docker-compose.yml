@@ -1,17 +1,17 @@
 version: "2"
 services:
   antidote1:
-     image: antidotedb/antidote:latest
-     ports:
-       - "8087:8087"
-     environment:
-       NODE_NAME: "antidote@antidote1"
-       SHORT_NAME: "true"
-     cap_add:
-       - NET_ADMIN
-     networks:
-       - interdc
-       - local1
+    image: antidotedb/antidote:latest
+    ports:
+      - "8087:8087"
+    environment:
+      NODE_NAME: "antidote@antidote1"
+      SHORT_NAME: "true"
+    cap_add:
+      - NET_ADMIN
+    networks:
+      - interdc
+      - local1
 
   antidote2:
     image: antidotedb/antidote:latest
@@ -27,7 +27,7 @@ services:
       - local2
 
   server1:
-    image: java:8
+    image: amazoncorretto:8
     volumes:
       - ../application/build/libs:/code
     command: "java -jar application.jar 1"
@@ -38,7 +38,7 @@ services:
       - local1
 
   server2:
-    image: java:8
+    image: amazoncorretto:8
     volumes:
       - ../application/build/libs:/code
     command: "java -jar application.jar 2"
