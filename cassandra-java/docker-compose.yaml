@@ -1,0 +1,44 @@
+services:
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra
+    ports:
+      - "9042:9042"
+
+  cassandra-web:
+    image: ipushc/cassandra-web
+    container_name: cassandra-web
+    ports:
+      - "8083:8083"
+    environment:
+      - CASSANDRA_HOSTS=cassandra
+      - CASSANDRA_PORT=9042
+      - CASSANDRA_USERNAME=cassandra
+      - CASSANDRA_PASSWORD=cassandra
+    restart: always
+    depends_on:
+      - cassandra
+
+  cassandra2:
+    image: cassandra:latest
+    container_name: cassandra2
+    ports:
+      - "9043:9042"
+    environment:
+      - CASSANDRA_SEEDS=cassandra
+    depends_on:
+      - cassandra
+
+  cassandra2-web:
+    image: ipushc/cassandra-web
+    container_name: cassandra2-web
+    ports:
+      - "8084:8083"
+    environment:
+      - CASSANDRA_HOSTS=cassandra2
+      - CASSANDRA_PORT=9042
+      - CASSANDRA_USERNAME=cassandra
+      - CASSANDRA_PASSWORD=cassandra
+    restart: always
+    depends_on:
+      - cassandra2
